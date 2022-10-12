@@ -7,3 +7,6 @@
 [submodule "Autosar-drivers"]
 	path = Autosar-drivers
 	url = https://github.com/Abdulrahman-Yasser/Autosar-drivers
+[submodule "FWD-Advanced-Embedded"]
+	path = FWD-Advanced-Embedded
+	url = https://github.com/Abdulrahman-Yasser/FWD-Advanced-Embedded
