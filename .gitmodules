@@ -1,0 +1,3 @@
+[submodule "e-courses"]
+	path = e-courses
+	url = https://github.com/Abdulrahman-Yasser/e-courses
