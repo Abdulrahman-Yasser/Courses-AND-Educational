@@ -1,0 +1,40 @@
+ECU1/
+├─ App/
+│  ├─ DoorTask/
+│  ├─ LightSwitchTask/
+│  ├─ SpeedTask/
+├─ Middleware/
+├─ OS/
+│  ├─ RTOS/
+│  ├─ ServiceLayer/
+│  │  ├─ Comm Manager/
+├─ HAL/
+│  ├─ Door Driver/
+│  ├─ LightSwitchDriver/
+│  ├─ Speed Driver/
+│  ├─ CAN Handler/
+├─ MCAL/
+│  ├─ DIO/
+│  ├─ GPT/
+│  ├─ CAN/
+│  ├─ PORT/
+ECU2/
+├─ APP/
+│  ├─ BuzzerTask/
+│  ├─ RightLightTask/
+│  ├─ LeftLightTask/
+├─ Middleware/
+├─ OS/
+│  ├─ RTOS/
+│  ├─ ServiceLayer/
+│  │  ├─ Comm Manager/
+├─ HAL/
+│  ├─ Buzzer Driver/
+│  ├─ RightLight Driver/
+│  ├─ LeftLight Driver/
+│  ├─ CAN Handler/
+├─ MCAL/
+│  ├─ DIO/
+│  ├─ GPT/
+│  ├─ CAN/
+│  ├─ PORT/
