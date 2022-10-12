@@ -1,0 +1,1 @@
+"./main.obj" "./tm4c123gh6pm_startup_ccs.obj" "./Dio/Dio.obj" "./Dio/Dio_PBcfg.obj" "./Gpt/Gpt.obj" "./app/App.obj" "./app/Button.obj" "./app/Led.obj" "./os/Os.obj" "./port/Port.obj" "./port/Port_PBcfg.obj" "./resources/Det.obj" "../tm4c123gh6pm.cmd" -llibc.a 
