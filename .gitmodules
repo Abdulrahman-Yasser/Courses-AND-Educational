@@ -1,3 +1,9 @@
 [submodule "e-courses"]
 	path = e-courses
 	url = https://github.com/Abdulrahman-Yasser/e-courses
+[submodule "TimeTriggered-Embedded-system-Tiva-c"]
+	path = TimeTriggered-Embedded-system-Tiva-c
+	url = https://github.com/Abdulrahman-Yasser/TimeTriggered-Embedded-system-Tiva-c
+[submodule "Autosar-drivers"]
+	path = Autosar-drivers
+	url = https://github.com/Abdulrahman-Yasser/Autosar-drivers
