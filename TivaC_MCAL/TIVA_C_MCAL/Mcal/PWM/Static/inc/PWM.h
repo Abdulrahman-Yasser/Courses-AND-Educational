@@ -45,8 +45,6 @@ uint8 pwm_stop(PWM_ChannelType channel, uint8 bins);
 
 uint8 pwm_enable(PWM_ChannelType channel, uint8 bins);
 
-uint8 PWM_UpdateThresholds(PWM_ChannelType channel, uint32 ThreshLow, uint32 ThreshHigh);
 
-uint8 pwm_AutomaticDutyCycle(PWM_ChannelType channel, uint32 DesiredDutyCycle, uint8 Channel_A_or_B);
 
 #endif /* MCAL_PWM_STATIC_INC_PWM_H_ */
