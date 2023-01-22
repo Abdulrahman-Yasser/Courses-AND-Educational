@@ -5,8 +5,8 @@ This repo will contain PWM(Pulse-Width modulator) Driver,
 all you have to do is changing the PWM_Cfg.h and PWM_Lcfg.c for you own configurations as you will see in the example below
 
 ## 🔗 Video how to use it Links
-
-[![youtube](https://img.shields.io/youtube/views/T1rNExItZcU?style=social)](https://www.youtube.com/watch?v=T1rNExItZcU)
+Click here to watch a Demo of the PWM Driver
+[![youtube](https://img.shields.io/youtube/views/T1rNExItZcU?style=social)](https://youtu.be/-FTmAn_6DzU)
 
 
 ## Screenshots
