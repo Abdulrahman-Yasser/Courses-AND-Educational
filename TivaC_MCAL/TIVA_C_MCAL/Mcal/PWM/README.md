@@ -11,9 +11,9 @@ all you have to do is changing the PWM_Cfg.h and PWM_Lcfg.c for you own configur
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Functions API in PWM](https://user-images.githubusercontent.com/63866803/213921593-025961b5-0e10-454a-ac15-6806bab6ba03.jpg)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![PWM Container](https://user-images.githubusercontent.com/63866803/213921669-1b8f3aa9-4edd-4aa7-a9a2-65bb3be93f42.png)
 
 
 ## 🛠 Skills
