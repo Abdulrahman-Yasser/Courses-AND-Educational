@@ -1,12 +1,12 @@
 
-# PWM
+# UART
 
-This repo will contain PWM(Pulse-Width modulator) Driver,
-all you have to do is changing the PWM_Cfg.h and PWM_Lcfg.c for you own configurations as you will see in the example below
+This repo will contain UART(Universal asynchronous receiver-transmitter) Driver,
+all you have to do is changing the UART_Cfg.h and UART_Lcfg.c for you own configurations as you will see in the example below
 
 ## 🔗 Video how to use it Links
-Click here to watch a Demo of the PWM Driver
-[![youtube](https://img.shields.io/youtube/views/T1rNExItZcU?style=social)](https://youtu.be/-FTmAn_6DzU)
+Click here to watch a Demo of the UART Driver, It will be added soon
+[![youtube](https://img.shields.io/youtube/views/T1rNExItZcU?style=social)]()
 
 
 ## Screenshots
@@ -52,28 +52,28 @@ const UART_ConfigType UART_Container[UART_CONFIGURED_NUMBER] = {
 
 ## API Reference
 
-#### All the functions you can use in PWM
+#### All the functions you can use in UART
 
 
 | Functions | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `uart_init()` | `void` | `it initialize your UART with your configuraions`|
 | `UART_Poke_to_transmit (my_uart, Bytes_Cnt)` | `void` | `it starts the transmission via my_uart channel id, if the Bytes_Cnt is 0 : it will transmit all of the queue, else it will tranmit the number of the bytes` |
-| `UART_Poke_to_receive (my_uart, Bytes_Cnt)` | `uint8` | `it starts the receiving via my_uart channel id, if the Bytes_Cnt is 0 : it will receive untill the queue is full, else it will receive the number of the bytes`
-| `UART_Push_to_Transmit (my_uart, x , must_be_pushed)` | `uint8` | `it updates your compare A register for the channel using a built-in method to update it with the percentage with respect to the load, high_threshold and low_threshold values`
-| `UART_Pop_the_Received (my_uart, *data)` | `uint8` | `it updates your compare A register for the channel using a built-in method to update it with the percentage with respect to the load, high_threshold and low_threshold values` |
+| `UART_Poke_to_receive (my_uart, Bytes_Cnt)` | `void` | `it starts the receiving via my_uart channel id, if the Bytes_Cnt is 0 : it will receive untill the queue is full, else it will receive the number of the bytes`
+| `UART_Push_to_Transmit (my_uart, x , must_be_pushed)` | `void` | `It inserts data in your pre-initialized uart-Queue, it does not transmit it. it just push the data in the queue. you still need to call UART_Poke_to_transmit`
+| `UART_Pop_the_Received (my_uart, *data)` | `void` | `It receive the data here after your calling to the function UART_Poke_to_receive or when it automatically receive in the ISR` |
 
-#### the only variable you need to change in PWM_Lcfg
+#### the only variable you need to change in UART_Lcfg
 | Variables | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `PWM_Container[ PWM_CONFIGURED_NUMBER] `      | `PWM_ConfigType` | `pwm_block (Channel Number)` |
-| | |`pwmdiv (the PWM will be divided using that variable (if you don't want to use it make it 0))` |
-| | |`load_value (the initial value in load register)` |
-| | |`Generates_A (the initial Actions that will be generated in each event pwm(0, 2, 4, 6))` |
-| | |`Generates_B (the initial Actions that will be generated in each event pwm(1, 3, 5, 7))` |
-| | |`compare_a_value (the initial value in compare A register)` |
-| | |`compare_b_value (the initial value in compare B register)` |
-| | |`count_mode (whether the PWM will count Up/Down or just Down)` |
-| | |`high_threshold (the compare registers will not exceed that value (if you don't want to use it make it 0))` |
-| | |`low_threshold (the compare registers will not be lower than that value (if you don't want to use it make it 0))` |
+| `UART_Container[UART_CONFIGURED_NUMBER] `      | `UART_ConfigType` | `uart_n (Channel Number)` |
+| | |`Uart_Mode (the UART's Mode whether it was receive, transmit or both)` |
+| | |`Data_Size (UART Data size 5-Bits : 8-Bits)` |
+| | |`parity (The parity of the UART if exist)` |
+| | |`StopBits_Num (the UART's Stop bits that will be transmitted)` |
+| | |`Uart_ISRMode (the UART got a static array that contain a number of ISR)` |
+| | |`BaudRate (the UART's Baud rate, whatever the desired rate it will be generated)` |
+| | |`endOfTransmission (a Flag that represent the EOF flag in the UART, if 1 it will generate a flag whenever it finishes a transmit)` |
+| | |`fifo_size_rx (a Pointer to a pre-initialized Queue that is initialized with the UART's ID initialization. that Queue is used in receiving data)` |
+| | |`fifo_size_tx (a Pointer to a pre-initialized Queue that is initialized with the UART's ID initialization. that Queue is used in transmitting data)` |
 
