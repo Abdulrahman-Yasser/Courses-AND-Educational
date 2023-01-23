@@ -46,7 +46,6 @@ const UART_ConfigType UART_Container[UART_CONFIGURED_NUMBER] = {
     .fifo_size_rx = UART_FIFO_NOTUSED,.fifo_size_tx = UART_FIFO_7_8
     }
 };
-};
 ```
 
 
