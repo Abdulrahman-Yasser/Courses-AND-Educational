@@ -25,7 +25,14 @@ MCAL/UART/Dynamic/inc/UART.Cfg
 
 ```bash
 #define TIMERS_NUMBERS      11
-extern const Gpt_ConfigType GPT_ConfigPtr_Container[TIMERS_NUMBERS];
+
+#define MY_TIMER0_CHANNEL               (Gpt_ChannelType)Gpt_Channel_Normal_0
+#define MY_TIMER0_FREQUENCY             (uint32)15       //15us
+#define MY_TIMER0_PRESCALING_TYPE       Gpt_Prescale_Hardware
+#define MY_TIMER0_WAIT_PERIOD           (Gpt_ValueType)60000
+#define MY_TIMER0_MODE                  (Gpt_ModeType)Gpt_Mode_Periodic_A
+#define MY_TIMER0_INTERRUPT             ((1 << Gpt_InterruptOverFlow))
+#define MY_TIMER0_ISR_CALLBACK          App_Function
 
 #define MY_DEFAULT_CHANNEL              Gpt_Channel_Normal_0
 #define MY_DEFAULT_FREQUENCY            0
@@ -34,6 +41,8 @@ extern const Gpt_ConfigType GPT_ConfigPtr_Container[TIMERS_NUMBERS];
 #define MY_DEFAULT_MODE                 Gpt_Mode_NotUsed
 #define MY_DEFAULT_INTERRUPT            Gpt_Interrupt_NotUsed
 #define MY_DEFAULT_ISR_CALLBACK         Default_Function
+
+extern const Gpt_ConfigType GPT_ConfigPtr_Container[TIMERS_NUMBERS];
 ```
 MCAL/UART/Dynamic/src/UART_Lcfg
 
