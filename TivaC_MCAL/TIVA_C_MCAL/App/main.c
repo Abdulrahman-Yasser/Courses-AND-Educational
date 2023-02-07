@@ -40,7 +40,7 @@ void Test_PWM_Generation_NoISR_Configs(void){
     pwm_enable(PWM_NUM_0_1, 0x3);
     while(1){
         Delay_ms(50);
-        pwm_AutomaticDutyCycle(PWM_NUM_0_1, i, 0);
+        pwm_AutomaticDutyCycle(PWM_NUM_0_1, i, PWM_SUB_CHANNEL_BOTH);
         i++;
         if(i > 100){
             i = 0;

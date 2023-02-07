@@ -35,8 +35,8 @@
 * \Reentrancy      : Reentrant
 * \Parameters (in) : ChannelId          The pin Number in the board
 * \Parameters (out): None
-* \Return value:   : DIO_LevelType      DIO_HIGH
-*                                       DIO_LOW
+* \Return value:   : DIO_LevelType      DIO_Level_HIGH
+*                                       DIO_Level_LOW
 *******************************************************************************/
 DIO_LevelType Dio_ReadChannel(DIO_ChannelType ChannelId){
     uint32 temp;
@@ -63,9 +63,9 @@ DIO_LevelType Dio_ReadChannel(DIO_ChannelType ChannelId){
         break;
     }
     if(temp > 0){
-        return DIO_HIGH;
+        return DIO_Level_HIGH;
     }else{
-        return DIO_LOW;
+        return DIO_Level_LOW;
     }
 }
 
@@ -81,7 +81,7 @@ DIO_LevelType Dio_ReadChannel(DIO_ChannelType ChannelId){
 * \Return value:   : None
 * *******************************************************************************/
 void Dio_WriteChannel(DIO_ChannelType ChannelId, DIO_LevelType Level){
-    if(Level == DIO_HIGH){
+    if(Level == DIO_Level_HIGH){
         switch(ChannelId / 8){
         case 0:
             *(volatile uint32*)((uint8*)GPIO_PORTA_DATA_ADDRESS + ( (1 << ChannelId%8) << 2)) |= 0XFF;
@@ -242,9 +242,9 @@ DIO_LevelType Dio_FlipChannel(DIO_ChannelType ChannelId){
         break;
     }
     if(myLevel > 0){
-        return DIO_HIGH;
+        return DIO_Level_HIGH;
     }else{
-        return DIO_LOW;
+        return DIO_Level_LOW;
     }
 }
 

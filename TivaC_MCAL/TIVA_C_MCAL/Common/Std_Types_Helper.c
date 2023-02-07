@@ -17,6 +17,7 @@ void WriteUsingBB(uint32* Ptr, uint32 Value){
             REG_CLR_PERIPH_BB_PTR(((uint8*)Ptr),i);
         }
     }
+
 }
 
 void Delay_ms(unsigned long long n){

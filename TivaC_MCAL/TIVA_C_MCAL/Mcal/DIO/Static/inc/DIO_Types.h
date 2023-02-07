@@ -29,7 +29,7 @@ typedef enum{
     DIO_Channel0_C, DIO_Channel1_C, DIO_Channel2_C, DIO_Channel3_C, DIO_Channel4_C, DIO_Channel5_C, DIO_Channel6_C, DIO_Channel7_C,
     DIO_Channel0_D, DIO_Channel1_D, DIO_Channel2_D, DIO_Channel3_D, DIO_Channel4_D, DIO_Channel5_D, DIO_Channel6_D, DIO_Channel7_D,
     DIO_Channel0_E, DIO_Channel1_E, DIO_Channel2_E, DIO_Channel3_E, DIO_Channel4_E, DIO_Channel5_E,
-    DIO_Channel0_F=40, DIO_Channel1_F, DIO_Channel2_F, DIO_Channel3_F, DIO_Channel4_F
+    DIO_Channel0_F=40, DIO_Channel1_F, DIO_Channel2_F, DIO_Channel3_F, DIO_Channel4_F, DIO_Channel_NotUsed = 50
 }DIO_ChannelType;
 
 typedef enum{
@@ -37,7 +37,7 @@ typedef enum{
 }DIO_PortType;
 
 typedef enum{
-    DIO_HIGH, DIO_LOW
+    DIO_Level_LOW, DIO_Level_HIGH
 }DIO_LevelType;
 
 typedef uint8 DIO_PortLevelType;

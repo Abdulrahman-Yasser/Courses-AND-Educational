@@ -1,7 +1,7 @@
 /*
  * LCD.h
  *
- *  Created on: Nov 26, 2022
+ *  Created on: Feb 6, 2023
  *      Author: abduy
  */
 
@@ -9,27 +9,72 @@
 #define HAL_LCD_STATIC_INC_LCD_H_
 
 #include "LCD_Types.h"
-#include "../../../../Common/Compiler.h"
-#include "../../../../Common/Platform_Types.h"
 
-/* Constructor */
-void LCD_Init(LCD_Container_Type* const me, Std_BoolReturnType (*isFull_arg)(LCD_Container_Type* const me),
-              Std_BoolReturnType (*isEmpty_arg)(LCD_Container_Type* const me), Std_BoolReturnType (*getSize_arg)(LCD_Container_Type* const me),
-              void (*insert_arg)(LCD_Container_Type* const me, LCD_CHAR_Type k), LCD_CHAR_Type (*remove_arg)(LCD_Container_Type* const me, LCD_Position_Type i));
+#define LCD_I2C_RS_INSTRUCTION              (uint8)0
+#define LCD_I2C_RS_DATA                     (uint8)1
 
-/* Destructor */
-void LCD_CleanUp(LCD_Container_Type* const me);
+#define LCD_I2C_RW_WRITE                    (uint8)0
+#define LCD_I2C_RW_READ                     (uint8)1
 
-/* Operations */
-uint8 (*isFullFunction)(LCD_Container_Type* const me);
-uint8 (*isEmptyFunction)(LCD_Container_Type* const me);
-uint8 (*getSizeFunction)(LCD_Container_Type* const me);
-void (*insertFunction)(LCD_Container_Type* const me, LCD_CHAR_Type k);
-LCD_CHAR_Type (*removeFunction)(LCD_Container_Type* const me, LCD_Position_Type i);
+#define LCD_I2C_INST_CLEAR                          (uint8)0x01
+#define LCD_I2C_INST_CURSOR_TO_HOME                 (uint8)0x02
 
-LCD_Container_Type *LCD_Create(void);
-void LCD_Destroy(LCD_Container_Type* const me);
+/*  that instruction will make the cursor/Address Counter decrements to left
+ *  when we enter a new character. */
+#define LCD_I2C_INST_CURSOR_DEC_LEFT                (uint8)0x04
 
+/*  that instruction will make the cursor/Address Counter increments to right
+ *  when we enter a new character. */
+#define LCD_I2C_INST_CURSOR_INC_RIGHT               (uint8)0x06
+
+/*  that instruction will make the Address Counter decrements to left
+ *  when we enter a new character and the display will be shifted left. */
+#define LCD_I2C_INST_DISPLAY_SHIFT_RIGHT            (uint8)0x05
+
+/*  that instruction will make the Address Counter increments to right
+ *  when we enter a new character and the display will be shifted right. */
+#define LCD_I2C_INST_DISPLAY_SHIFT_LEFT             (uint8)0x07
+
+#define LCD_I2C_INST_DISPLAY_OFF_CURSOR_OFF_BLK_OFF     (uint8)0x08
+#define LCD_I2C_INST_DISPLAY_OFF_CURSOR_OFF_BLK_ON      (uint8)0x09
+#define LCD_I2C_INST_DISPLAY_OFF_CURSOR_ON_BLK_OFF      (uint8)0x0A
+#define LCD_I2C_INST_DISPLAY_OFF_CURSOR_ON_BLK_ON       (uint8)0x0B
+#define LCD_I2C_INST_DISPLAY_ON_CURSOR_OFF_BLK_OFF      (uint8)0x0C
+#define LCD_I2C_INST_DISPLAY_ON_CURSOR_OFF_BLK_ON       (uint8)0x0D
+#define LCD_I2C_INST_DISPLAY_ON_CURSOR_ON_BLK_OFF       (uint8)0x0E
+#define LCD_I2C_INST_DISPLAY_ON_CURSOR_BLK_ON           (uint8)0x0F
+
+#define LCD_I2C_CFG_2_LINES_4_DATA                  (uint8)0x28
+#define LCD_I2C_CFG_2_LINES_8_DATA                  (uint8)0x38
+
+#define LCD_I2C_SET_DDRAM_ADDRESS(Line, Pos)        (uint8)(0x80+(Line*0x40)+Pos)
+
+#define LCD_I2C_INST_CURSOR_SHIFT_LEFT              (uint8)0x10
+#define LCD_I2C_INST_CURSOR_SHIFT_RIGHT             (uint8)0x14
+
+//#define LCD_I2C_INST_DISPLAY_SHIFT_LEFT             (uint8)0x18
+//#define LCD_I2C_INST_DISPLAY_SHIFT_RIGHT            (uint8)0x1C
+
+#define LCD_I2C_INST_CURSOR_GO_1ST_LINE             (uint8)0x80
+#define LCD_I2C_INST_CURSOR_GO_2ND_LINE             (uint8)0xC0
+
+#define LCD_I2C_CFG_2_LINES_4_DATA                  (uint8)0x28
+#define LCD_I2C_CFG_2_LINES_8_DATA                  (uint8)0x38
+
+
+
+#define LCD_I2C_INSTRUCTION_ON_OFF_CTRL             (uint8)0x08
+#define LCD_I2C_INSTRUCTION_CURSOR_OR_CHAR_SHIFT    (uint8)0x10
+#define LCD_I2C_INSTRUCTION_BUY_FUNCTION            (uint8)0x10
+
+/*
+ * ====================================== Public Function Definition ======================================
+ */
+
+
+
+LCD_Handler_Type *LCD_Create(LCD_Interface_Type LCD_Interface_arg, uint8 LCD_ID);
+void LCD_DIO_Destroy(LCD_Handler_Type* const me);
 
 
 #endif /* HAL_LCD_STATIC_INC_LCD_H_ */
