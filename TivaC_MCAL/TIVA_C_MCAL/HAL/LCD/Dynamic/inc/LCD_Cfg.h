@@ -11,7 +11,7 @@
 #include "../../Static/inc/LCD_Types.h"
 
 #define LCD_I2C_CONFIGURED_NUMBER   1
-#define LCD_DIO_CONFIGURED_NUMBER   1
+#define LCD_DIO_CONFIGURED_NUMBER   0
 
 
 extern const LCD_I2C_Container_Type Lcd_I2C_Config[LCD_I2C_CONFIGURED_NUMBER];

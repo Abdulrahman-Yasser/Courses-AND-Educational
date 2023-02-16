@@ -12,15 +12,7 @@
 #include "Sensor_Types.h"
 
 
-//  Constructor
-void Sensor_Init(Sensor_Type* const me, SENSOR_READ_TYPE (*GetValueFunction)(Sensor_Type* const me) );
-
-//  Destructor
-void Sensor_Cleanup(Sensor_Type* const me);
-
-
-SENSOR_READ_TYPE Sensor_GetValue(const Sensor_Type* const me);
-Sensor_Type * Sensor_Create(void);
+Sensor_Type * Sensor_Create(uint8 Sensor_ID, Sensor_IntrfaceType SensorInterface);
 void Sensor_Destroy( const Sensor_Type* const me);
 
 #endif /* HAL_SENSOR_STATIC_INC_SENOSR_H_ */

@@ -23,12 +23,19 @@ App/main.obj: ../Mcal/SysTick/Static/inc/SysTick.h
 App/main.obj: ../Mcal/SysTick/Static/inc/SysTick_Types.h
 App/main.obj: ../Mcal/PWM/Static/inc/PWM.h
 App/main.obj: ../Mcal/PWM/Static/inc/PWM_Types.h
+App/main.obj: ../HAL/LCD/Static/inc/LCD.h
+App/main.obj: ../HAL/LCD/Static/inc/LCD_Types.h
 App/main.obj: ../Mcal/I2C/Dynamic/inc/I2C_Cfg.h
 App/main.obj: ../Mcal/UART/Dynamic/inc/UART_Cfg.h
 App/main.obj: ../Mcal/PORT/Dynamic/inc/PORT_Cfg.h
 App/main.obj: ../Mcal/GPT/Dynamic/inc/GPT_Cfg.h
 App/main.obj: ../Mcal/SysTick/Dynamic/inc/SysTick_CFG.h
 App/main.obj: ../Mcal/PWM/Dynamic/inc/PWM_Cfg.h
+App/main.obj: ../HAL/LCD/Dynamic/inc/LCD_Cfg.h
+App/main.obj: C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdlib.h
+App/main.obj: C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/_ti_config.h
+App/main.obj: C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/linkage.h
+App/main.obj: C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/cdefs.h
 
 ../App/main.c:
 
@@ -76,6 +83,10 @@ D:/_Study_A/Courses\ projects/TivaC_MCAL/TIVA_C_MCAL/Mcal/DIO/Static/inc/DIO_Typ
 
 ../Mcal/PWM/Static/inc/PWM_Types.h:
 
+../HAL/LCD/Static/inc/LCD.h:
+
+../HAL/LCD/Static/inc/LCD_Types.h:
+
 ../Mcal/I2C/Dynamic/inc/I2C_Cfg.h:
 
 ../Mcal/UART/Dynamic/inc/UART_Cfg.h:
@@ -87,4 +98,14 @@ D:/_Study_A/Courses\ projects/TivaC_MCAL/TIVA_C_MCAL/Mcal/DIO/Static/inc/DIO_Typ
 ../Mcal/SysTick/Dynamic/inc/SysTick_CFG.h:
 
 ../Mcal/PWM/Dynamic/inc/PWM_Cfg.h:
+
+../HAL/LCD/Dynamic/inc/LCD_Cfg.h:
+
+C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdlib.h:
+
+C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/_ti_config.h:
+
+C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/linkage.h:
+
+C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/cdefs.h:
 

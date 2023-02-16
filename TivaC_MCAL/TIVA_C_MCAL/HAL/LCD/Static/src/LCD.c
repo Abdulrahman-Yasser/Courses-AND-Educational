@@ -67,6 +67,20 @@ LCD_Handler_Type *LCD_Create(LCD_Interface_Type LCD_Interface_arg, uint8 LCD_ID)
             me->LCD_Write_Cmd(me, LCD_I2C_INST_DISPLAY_ON_CURSOR_ON_BLK_OFF);
         }else if(LCD_Interface_arg == LCD_Interface_DIO){
             LCD_Init(me, LCD_ID, LCD_DIO_Write_Cmd_Function, LCD_DIO_Read_Cmd_Function, LCD_DIO_Write_Data_Function, LCD_DIO_Read_Data_Function);
+            Delay_ms(50);
+            me->LCD_Write_Cmd(me, 0x3);
+            Delay_ms(5);
+            me->LCD_Write_Cmd(me, 0x3);
+            Delay_ms(5);
+            me->LCD_Write_Cmd(me, 0x3);
+            Delay_ms(10);
+            me->LCD_Write_Cmd(me, 0x2);
+            Delay_ms(10);
+            me->LCD_Write_Cmd(me, Lcd_I2C_Config[me->LCD_ID].LCD_I2C_Initial_FunctionSet << 2 );
+            me->LCD_Write_Cmd(me, LCD_I2C_INST_DISPLAY_OFF_CURSOR_OFF_BLK_OFF);
+            me->LCD_Write_Cmd(me, LCD_I2C_INST_CLEAR);
+            me->LCD_Write_Cmd(me, Lcd_I2C_Config[me->LCD_ID].LCD_I2C_Initial_EntryModeSet);
+            me->LCD_Write_Cmd(me, LCD_I2C_INST_DISPLAY_ON_CURSOR_ON_BLK_OFF);
         }
     }
     return me;
