@@ -46,11 +46,13 @@ void Test_I2C_AlwaysFullBuffer_NoISR_Configs(void);
 void Test_PWM_Generation_NoISR_Configs(void);
 
 
+/*================================================ Main Function ================================================*/
+
 int main(void){
-    Test_I2C_LCD();
+    Test_PWM_Generation_NoISR_Configs();
 }
 
-/*================================================ I2C TEST ================================================*/
+/*================================================ PWM TEST ================================================*/
 void Test_PWM_Generation_NoISR_Configs(void){
     int i = 0;
 
@@ -58,10 +60,10 @@ void Test_PWM_Generation_NoISR_Configs(void){
     Gpt_Init();
     IntCtrl_Init();
     pwm_init();
-    pwm_enable(PWM_NUM_0_1, 0x3);
+    pwm_enable(PWM_NUM_0_1_A);
     while(1){
         Delay_ms(50);
-        pwm_AutomaticDutyCycle(PWM_NUM_0_1, i, PWM_SUB_CHANNEL_BOTH);
+        pwm_AutomaticDutyCycle(PWM_NUM_0_1_A, i);
         i++;
         if(i > 100){
             i = 0;
