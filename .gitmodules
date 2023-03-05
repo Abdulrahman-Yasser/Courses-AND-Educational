@@ -1,3 +1,6 @@
 [submodule "PatternDesign-In-C"]
 	path = PatternDesign-In-C
 	url = https://github.com/Abdulrahman-Yasser/PatternDesign-In-C
+[submodule "TimeTriggered-Embedded-system-Tiva-c"]
+	path = TimeTriggered-Embedded-system-Tiva-c
+	url = https://github.com/Abdulrahman-Yasser/TimeTriggered-Embedded-system-Tiva-c
