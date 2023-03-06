@@ -4,3 +4,6 @@
 [submodule "my_Head-First-Design-Pattern-Cpp"]
 	path = my_Head-First-Design-Pattern-Cpp
 	url = https://github.com/Abdulrahman-Yasser/my_Head-First-Design-Pattern-Cpp
+[submodule "PatternDesign-In-C"]
+	path = PatternDesign-In-C
+	url = https://github.com/Abdulrahman-Yasser/PatternDesign-In-C
