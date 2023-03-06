@@ -4,3 +4,6 @@
 [submodule "TimeTriggered-Embedded-system-Tiva-c"]
 	path = TimeTriggered-Embedded-system-Tiva-c
 	url = https://github.com/Abdulrahman-Yasser/TimeTriggered-Embedded-system-Tiva-c
+[submodule "my_Head-First-Design-Pattern-Cpp"]
+	path = my_Head-First-Design-Pattern-Cpp
+	url = https://github.com/Abdulrahman-Yasser/my_Head-First-Design-Pattern-Cpp
