@@ -1,4 +1,4 @@
-public class SLList<SLListType> {
+public class SLList<SLListType> implements List61B<SLListType> {
     private static int size ;
 
     /** Nested class, we use it when declaring something that will only be used
@@ -13,7 +13,7 @@ public class SLList<SLListType> {
 //            next = n;
 //        }
 //    }
-    private IntNode<SLListType> sentinel;
+    protected IntNode<SLListType> sentinel;
     public SLList(SLListType x){
         sentinel = new IntNode<SLListType>(null, null);
         sentinel.next = new IntNode<SLListType>(x, null);
@@ -59,6 +59,30 @@ public class SLList<SLListType> {
     }
     public int size(){
         return size;
+    }
+    public SLListType removeLast(){
+        IntNode<SLListType> q = sentinel;
+        for(int i = 0; i < size; i++){
+            q = q.next;
+        }
+        SLListType result = q.next.item;
+        q.next = null;
+        return result;
+    }
+    public SLListType get(int i){
+        IntNode<SLListType> q = sentinel;
+        for(int j = 0; i < i; j++){
+            q = q.next;
+        }
+        return q.item;
+    }
+    public void Insert(SLListType x, int position){
+        IntNode<SLListType> new_item, q = sentinel;
+        for(int i = 0; i < position; i++){
+            q = q.next;
+        }
+        new_item = new IntNode<SLListType>(x, q.next.next);
+        q.next = new_item;
     }
 }
 
