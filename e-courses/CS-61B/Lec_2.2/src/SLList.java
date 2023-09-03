@@ -13,7 +13,7 @@ public class SLList<SLListType> implements List61B<SLListType> {
 //            next = n;
 //        }
 //    }
-    protected IntNode<SLListType> sentinel;
+    private IntNode<SLListType> sentinel;
     public SLList(SLListType x){
         sentinel = new IntNode<SLListType>(null, null);
         sentinel.next = new IntNode<SLListType>(x, null);
